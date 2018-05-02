@@ -13,9 +13,14 @@ public class Motor {
     }
 
     //turns the motor on
-    public void on(){
+    public void on(int milliseconds){
         status = true;
-        System.out.println(name + ": off");
+        System.out.println(name + ": on");
+        try {
+                Thread.sleep(milliseconds); //sleep amount of milliseconds
+                off();
+            } catch (InterruptedException e) {
+                System.out.println("got interrupted!");
     }
 
     //turns the motor off
